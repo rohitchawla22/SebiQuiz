@@ -1,0 +1,79 @@
+package com.rns.sebiquiz;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageButton;
+
+public class QuizMenu extends Activity implements OnClickListener {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		SharedPreferences data; 
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.menu);
+		
+		    data = getSharedPreferences(level1.filename, 0); 
+	        data = getSharedPreferences(level2.filename, 0);
+	        data = getSharedPreferences(level1.filename, 0); 
+	        data = getSharedPreferences(level2.filename, 0); 
+	        data = getSharedPreferences(level1.filename, 0); 
+	        data = getSharedPreferences(level2.filename, 0); 
+	    
+	        String scorereturn1 = data.getString("score1", "PREVIOUS SCORE: NONE"); 
+	        String scorereturn2 = data.getString("score2", "PREVIOUS SCORE: NONE"); 
+	        String scorereturn3 = data.getString("score3", "PREVIOUS SCORE: NONE"); 
+	        String scorereturn4 = data.getString("score4", "PREVIOUS SCORE: NONE"); 
+	        String scorereturn5 = data.getString("score5", "PREVIOUS SCORE: NONE"); 
+	        String scorereturn6 = data.getString("score6", "PREVIOUS SCORE: NONE"); 
+		
+	    ImageButton l1 = (ImageButton) findViewById(R.id.level1);
+		ImageButton l2 = (ImageButton) findViewById(R.id.level2);
+		ImageButton l3 = (ImageButton) findViewById(R.id.level3);
+		ImageButton l4 = (ImageButton) findViewById(R.id.level4);
+		ImageButton l5 = (ImageButton) findViewById(R.id.level5);
+		ImageButton l6 = (ImageButton) findViewById(R.id.level6);
+		
+		l1.setOnClickListener(this);
+		l2.setOnClickListener(this);
+		l3.setOnClickListener(this);
+		l4.setOnClickListener(this);
+		l5.setOnClickListener(this);
+		l6.setOnClickListener(this);
+		
+	}
+	
+	public void onClick (View v){
+		switch(v.getId()){
+		case  R.id.level1:
+			Intent i1 = new Intent(QuizMenu.this, level1.class);
+			startActivity(i1);
+		break;
+		case  R.id.level2:
+			Intent i2 = new Intent(QuizMenu.this, level2.class);
+			startActivity(i2);
+			break;
+		case  R.id.level3:
+			Intent i3 = new Intent(QuizMenu.this, level3.class);
+			startActivity(i3);
+			break;
+		case  R.id.level4:
+			Intent i4 = new Intent(QuizMenu.this, level4.class);
+			startActivity(i4);
+			break;
+		case  R.id.level5:
+			Intent i5 = new Intent(QuizMenu.this, level5.class);
+			startActivity(i5);
+			break;
+		case  R.id.level6:
+			Intent i6 = new Intent(QuizMenu.this, level6.class);
+			startActivity(i6);
+			break;
+		}
+	}
+
+}

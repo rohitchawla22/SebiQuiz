@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="257" key="DIALOG_WIDTH"/>
+		<item value="344" key="DIALOG_Y_ORIGIN"/>
+		<item value="379" key="DIALOG_HEIGHT"/>
+		<item value="431" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wholeword"/>
+		<item value=" Debt financing that can magnify the risk and reward for an investment are called Leverage" key="selection"/>
+		<list key="findhistory">
+			<item value=" Debt financing that can magnify the risk and reward for an investment are called as follows"/>
+			<item value="SEBI stands for Securities and Exchange Board of India"/>
+			<item value="level3"/>
+			<item value="q2"/>
+			<item value=" Issue Department"/>
+			<item value=" RBI Introduced Repos in 1992 &amp; Revenue Repos in 1996"/>
+			<item value="suggested to establish Insurance Regulatory Authority in India"/>
+			<item value=" Repos are money market insrtuments which allow banks and financial instituions to sell secruities to an investor with an agreement to repurchase at specified rate and date"/>
+		</list>
+		<list key="replacehistory">
+			<item value=" Debt financing that can magnify the risk and reward for an investment are called Leverage"/>
+			<item value="NYSE is an over-the-counter securities market"/>
+			<item value="level2"/>
+			<item value="ty"/>
+			<item value="Khusro Committee recommended the merger of Regional Rural Banks with their respective Sponsor Banks "/>
+			<item value="Khusro Committee "/>
+			<item value="Number of State Finance Corporations in India are 18"/>
+			<item value="Malhotra Commitee suggested to establish Insurance Regulatory Authority in India"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="ContentDescription">
+        <ignore path="res/layout/main.xml" />
+        <ignore path="res/layout/menu.xml" />
+    </issue>
+    <issue id="DisableBaselineAlignment">
+        <ignore path="res/layout/menu.xml" />
+    </issue>
+    <issue id="HardcodedText" severity="ignore" />
+    <issue id="NestedWeights">
+        <ignore path="res/layout/menu.xml" />
+    </issue>
+    <issue id="UselessLeaf" severity="ignore" />
+    <issue id="UselessParent" severity="ignore" />
+</lint>

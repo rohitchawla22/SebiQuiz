@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+D:\Android\Finale\SEBI\SebiQuiz\.metadata\.plugins\org.eclipse.jdt.core
+2217869430.index
+3353810829.index
+3488967724.index

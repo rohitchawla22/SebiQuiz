@@ -1,0 +1,474 @@
+package com.rns.sebiquiz;
+
+
+
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.TextView;
+
+public class level5 extends Activity {
+	int sc;
+	public static String filename = "ScoreData";
+	SharedPreferences data;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.level5);
+
+		q1();
+
+	}
+
+	public void ty(){
+		final TextView score = (TextView) findViewById(R.id.score);
+		TextView que = (TextView) findViewById(R.id.que);
+		RadioGroup option = (RadioGroup) findViewById(R.id.option);
+		
+		
+		score.setVisibility(View.INVISIBLE);
+		option.setVisibility(View.INVISIBLE);
+		que.setText("SCORE: " +sc);
+		data = getSharedPreferences(filename, 0);
+		SharedPreferences.Editor editor = data.edit();
+		editor.putString("score5", "PREVIOUS SCORE: " + sc);
+		editor.commit();
+		
+		Thread timer = new Thread() {
+			public void run() {
+				try {
+
+					sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} finally {
+					Intent i = new Intent(level5.this, QuizMenu.class);
+					startActivity(i);
+				}
+			}
+		};
+		timer.start();
+		
+	}
+	
+	
+		
+	
+	
+	public void q7() {
+		final TextView score = (TextView) findViewById(R.id.score);
+		TextView que = (TextView) findViewById(R.id.que);
+		RadioGroup option = (RadioGroup) findViewById(R.id.option);
+		final RadioButton a1 = (RadioButton) findViewById(R.id.a);
+		final RadioButton a2 = (RadioButton) findViewById(R.id.b);
+		final RadioButton a3 = (RadioButton) findViewById(R.id.c);
+		final RadioButton a4 = (RadioButton) findViewById(R.id.d);
+		
+		score.setText("SCORE: " + sc);
+		que.setText("Q7. Salboni in West Bengal is best known for which of the following");
+		a1.setText("Indian Security Press");
+		a2.setText("Coin mint");
+		a3.setText("Modernized Currency notes Press");
+		a4.setText("None of these");
+		
+		option.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch (checkedId) {
+				case R.id.a:
+					
+					a1.setChecked(false);
+					Toast.makeText(level5.this, "INCORRECT: \n Salboni in West Bengal is best known for Modernized Currency notes Press",
+							Toast.LENGTH_LONG).show();
+					ty();
+					break;
+				case R.id.b:
+					Toast.makeText(level5.this, "INCORRECT: \n Salboni in West Bengal is best known for Modernized Currency notes Press",
+							Toast.LENGTH_LONG).show();
+					a2.setChecked(false);
+					ty();
+					break;
+				case R.id.c:
+					Toast.makeText(level5.this, "CORRECT: \n Salboni in West Bengal is best known for Modernized Currency notes Press",
+							Toast.LENGTH_LONG).show();
+					sc++;
+					a3.setChecked(false);
+				    score.setText("SCORE: " + sc);
+					ty();
+					break;
+				case R.id.d:
+					Toast.makeText(level5.this, "INCORRECT: \n Salboni in West Bengal is best known for Modernized Currency notes Press",
+							Toast.LENGTH_LONG).show();
+					a4.setChecked(false);
+					ty();
+					break;
+				}
+			}
+		});
+	}
+	
+	
+	public void q6() {
+		final TextView score = (TextView) findViewById(R.id.score);
+		TextView que = (TextView) findViewById(R.id.que);
+		RadioGroup option = (RadioGroup) findViewById(R.id.option);
+		final RadioButton a1 = (RadioButton) findViewById(R.id.a);
+		final RadioButton a2 = (RadioButton) findViewById(R.id.b);
+		final RadioButton a3 = (RadioButton) findViewById(R.id.c);
+		final RadioButton a4 = (RadioButton) findViewById(R.id.d);
+		
+		score.setText("SCORE: " + sc);
+		que.setText("Q6. Which among the following is correct regarding BPLR or bench mark prime lending rate?");
+		a1.setText("It is the lowest interest rate below PLR charged by a bank from the best customer of the financial year");
+		a2.setText("It is the highest interest rate above PLR charged by a bank from the any customer of the financial year");
+		a3.setText("It is the average interest rate above PLR charged by a bank from the any customer of the financial year");
+		a4.setText("None of them");
+		
+		option.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch (checkedId) {
+				case R.id.a:
+					Toast.makeText(
+							level5.this,
+							"CORRECT: \nIt is the lowest interest rate below PLR charged by a bank from the best customer of the financial year",
+							Toast.LENGTH_LONG).show();
+					a1.setChecked(false);
+					sc++;
+					score.setText("SCORE: " + sc);
+					q7();
+					break;
+				case R.id.b:
+					Toast.makeText(
+							level5.this,
+							"INCORRECT: \nIt is the lowest interest rate below PLR charged by a bank from the best customer of the financial year",
+							Toast.LENGTH_LONG).show();
+					a2.setChecked(false);
+					q7();
+					break;
+				case R.id.c:
+					Toast.makeText(
+							level5.this,
+							"INCORRECT: \nIt is the lowest interest rate below PLR charged by a bank from the best customer of the financial year",
+							Toast.LENGTH_LONG).show();
+					a3.setChecked(false);
+					q7();
+					break;
+				case R.id.d:
+					Toast.makeText(
+							level5.this,
+							"INCORRECT: \nIt is the lowest interest rate below PLR charged by a bank from the best customer of the financial year",
+							Toast.LENGTH_LONG).show();
+					a4.setChecked(false);
+					q7();
+					break;
+				}
+			}
+		});
+	}
+	
+	public void q5() {
+		final TextView score = (TextView) findViewById(R.id.score);
+		TextView que = (TextView) findViewById(R.id.que);
+		RadioGroup option = (RadioGroup) findViewById(R.id.option);
+		final RadioButton a1 = (RadioButton) findViewById(R.id.a);
+		final RadioButton a2 = (RadioButton) findViewById(R.id.b);
+		final RadioButton a3 = (RadioButton) findViewById(R.id.c);
+		final RadioButton a4 = (RadioButton) findViewById(R.id.d);
+		
+		score.setText("SCORE: " + sc);
+		que.setText("Q5. Which among the following correctly defines Hundi?");
+		a1.setText("They are slips on paper presented to the customer while purchasing goods");
+		a2.setText("They are accounts of unorganized sector in India");
+		a3.setText("They are key instruments of credit in the unorganized money market in India");
+		a4.setText("None of the above");
+
+		option.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch (checkedId) {
+				case R.id.a:
+					a1.setChecked(false);
+					Toast.makeText(level5.this, "INCORRECT: \nHundi are key instruments of credit in the unorganized money market in India",
+							Toast.LENGTH_LONG).show();
+					q6();
+					break;
+				case R.id.b:
+					Toast.makeText(level5.this, "INCORRECT: \nHundi are key instruments of credit in the unorganized money market in India",
+							Toast.LENGTH_LONG).show();
+					a2.setChecked(false);
+					q6();
+					break;
+				case R.id.c:
+					Toast.makeText(level5.this, "CORRECT: \nHundi are key instruments of credit in the unorganized money market in India",
+							Toast.LENGTH_LONG).show();
+					sc++;
+					score.setText("SCORE: " + sc);
+					a3.setChecked(false);
+					q6();
+					break;
+				case R.id.d:
+					Toast.makeText(level5.this, "INCORRECT: \nHundi are key instruments of credit in the unorganized money market in India",
+							Toast.LENGTH_LONG).show();
+					a4.setChecked(false);
+					q6();
+					break;
+				}
+			}
+		});
+	}
+	
+	public void q4() {
+		final TextView score = (TextView) findViewById(R.id.score);
+		TextView que = (TextView) findViewById(R.id.que);
+		RadioGroup option = (RadioGroup) findViewById(R.id.option);
+		final RadioButton a1 = (RadioButton) findViewById(R.id.a);
+		final RadioButton a2 = (RadioButton) findViewById(R.id.b);
+		final RadioButton a3 = (RadioButton) findViewById(R.id.c);
+		final RadioButton a4 = (RadioButton) findViewById(R.id.d);
+		
+		score.setText("SCORE: " + sc);
+		que.setText("Q4. Many a times we read in the newspaper about CARTEL. Which among the following is most appropriate definition of Cartel?");
+		a1.setText("Association of producer to regulate prices by restricting output and competition");
+		a2.setText("Association of companies to have competitive advantage");
+		a3.setText("Association of small number of buyer to have advantage over seller");
+		a4.setText("None of the above");
+		
+		option.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch (checkedId) {
+				case R.id.a:
+					sc++;
+					a1.setChecked(false);
+					Toast.makeText(level5.this, "CORRECT: \nAssociation of producer to regulate prices by restricting output and competition",
+							Toast.LENGTH_LONG).show();
+					score.setText("SCORE: " + sc);
+					q5();
+					break;
+				case R.id.b:
+					Toast.makeText(level5.this, "INCORRECT: \nAssociation of producer to regulate prices by restricting output and competition",
+							Toast.LENGTH_LONG).show();
+					a2.setChecked(false);
+					q5();
+					break;
+				case R.id.c:
+					Toast.makeText(level5.this, "INCORRECT: \nAssociation of producer to regulate prices by restricting output and competition",
+							Toast.LENGTH_LONG).show();
+					a3.setChecked(false);
+					q5();
+					break;
+				case R.id.d:
+					Toast.makeText(level5.this, "INCORRECT: \nAssociation of producer to regulate prices by restricting output and competition",
+							Toast.LENGTH_LONG).show();
+					a4.setChecked(false);
+					q5();
+					break;
+				}
+			}
+		});
+	}
+	public void q3() {
+		final TextView score = (TextView) findViewById(R.id.score);
+		TextView que = (TextView) findViewById(R.id.que);
+		RadioGroup option = (RadioGroup) findViewById(R.id.option);
+		final RadioButton a1 = (RadioButton) findViewById(R.id.a);
+		final RadioButton a2 = (RadioButton) findViewById(R.id.b);
+		final RadioButton a3 = (RadioButton) findViewById(R.id.c);
+		final RadioButton a4 = (RadioButton) findViewById(R.id.d);
+		
+		score.setText("SCORE: " + sc);
+		que.setText("Q3. In which year NSE launched Currency Derivatives?");
+		a1.setText("2006");
+		a2.setText("2007");
+		a3.setText("2008");
+		a4.setText("2009");
+
+		option.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch (checkedId) {
+				case R.id.a:
+					Toast.makeText(
+							level5.this,
+							"INCORRECT: \nNSE launched Currency Derivatives in the year 2008",
+							Toast.LENGTH_LONG).show();
+					a1.setChecked(false);
+
+					q4();
+					break;
+				case R.id.b:
+					Toast.makeText(
+							level5.this,
+							"INCORRECT: \nNSE launched Currency Derivatives in the year 2008",
+							Toast.LENGTH_LONG).show();
+
+					
+					a2.setChecked(false);
+					
+					q4();
+					break;
+				case R.id.c:
+					Toast.makeText(
+							level5.this,
+							"CORRECT: \nNSE launched Currency Derivatives in the year 2008",
+							Toast.LENGTH_LONG).show();
+					a3.setChecked(false);
+					sc++;
+					score.setText("SCORE: " + sc);
+					q4();
+					break;
+				case R.id.d:
+					Toast.makeText(
+							level5.this,
+							"INCORRECT: \nNSE launched Currency Derivatives in the year 2008",
+							Toast.LENGTH_LONG).show();
+
+					
+					a4.setChecked(false);
+					
+					q4();
+					break;
+
+				}
+			}
+		});
+	}
+
+
+	
+	
+	public void q2() {
+		final TextView score = (TextView) findViewById(R.id.score);
+		TextView que = (TextView) findViewById(R.id.que);
+		RadioGroup option = (RadioGroup) findViewById(R.id.option);
+		final RadioButton a1 = (RadioButton) findViewById(R.id.a);
+		final RadioButton a2 = (RadioButton) findViewById(R.id.b);
+		final RadioButton a3 = (RadioButton) findViewById(R.id.c);
+		final RadioButton a4 = (RadioButton) findViewById(R.id.d);
+		
+		score.setText("SCORE: " + sc);
+		que.setText("Q2. Which clearing house is the wholly owned subsidiary of NSE?");
+		a1.setText("National Securities Cleaning Corporation Ltd.");
+		a2.setText("National Securities Clearing Company Ltd.");
+		a3.setText("New Securities Clearing Corporation Ltd.");
+		a4.setText("National Securities Clearing Corporation Ltd.");
+
+		option.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch (checkedId) {
+				case R.id.a:
+					a1.setChecked(false);
+					Toast.makeText(level5.this, "INCORRECT: \nNational Securities Clearing Corporation Ltd. (NSCCL) is the wholly owned subsidiary of NSE",
+							Toast.LENGTH_LONG).show();
+					q3();
+					break;
+				case R.id.b:
+					Toast.makeText(level5.this, "INCORRECT: \nNational Securities Clearing Corporation Ltd. (NSCCL) is the wholly owned subsidiary of NSE",
+							Toast.LENGTH_LONG).show();
+					a2.setChecked(false);
+					q3();
+					break;
+				case R.id.c:
+					Toast.makeText(level5.this, "INCORRECT: \nNational Securities Clearing Corporation Ltd. (NSCCL) is the wholly owned subsidiary of NSE",
+							Toast.LENGTH_LONG).show();
+					a3.setChecked(false);
+					q3();
+					break;
+				case R.id.d:
+					Toast.makeText(level5.this, "CORRECT: \nNational Securities Clearing Corporation Ltd. (NSCCL) is the wholly owned subsidiary of NSE",
+							Toast.LENGTH_LONG).show();
+					sc++;
+					score.setText("SCORE: " + sc);
+				    a4.setChecked(false);
+					q3();
+					break;
+				}
+			}
+		});
+	}
+
+	public void q1() {
+		final TextView score = (TextView) findViewById(R.id.score);
+		TextView que = (TextView) findViewById(R.id.que);
+		RadioGroup option = (RadioGroup) findViewById(R.id.option);
+		final RadioButton a1 = (RadioButton) findViewById(R.id.a);
+		final RadioButton a2 = (RadioButton) findViewById(R.id.b);
+		final RadioButton a3 = (RadioButton) findViewById(R.id.c);
+		final RadioButton a4 = (RadioButton) findViewById(R.id.d);
+		
+		score.setText("SCORE: " + sc);
+		que.setText("Q1. In Financial Language, Fixed to Floating and Floating to Floating are mainly used in context with ___________?");
+		a1.setText("Interest rates");
+		a2.setText("Swaps");
+		a3.setText("Foreign Exchange rate");
+		a4.setText("Options");
+
+		option.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch (checkedId) {
+				case R.id.a:
+					Toast.makeText(
+							level5.this,
+							"INCORRECT: \nFixed to Floating and Floating to Floating are mainly used in context with Swaps",
+							Toast.LENGTH_LONG).show();
+					a1.setChecked(false);
+					q2();
+					break;
+				case R.id.b:
+					Toast.makeText(
+							level5.this,
+							"CORRECT: \nFixed to Floating and Floating to Floating are mainly used in context with Swaps",
+							Toast.LENGTH_LONG).show();
+
+					sc++;
+					score.setText("SCORE: " + sc);
+					a2.setChecked(false);
+					q2();
+					break;
+				case R.id.c:
+					Toast.makeText(
+							level5.this,
+							"INCORRECT: \nFixed to Floating and Floating to Floating are mainly used in context with Swaps",
+							Toast.LENGTH_LONG).show();
+					a3.setChecked(false);
+					q2();
+					break;
+				case R.id.d:
+					Toast.makeText(
+							level5.this,
+							"INCORRECT: \nFixed to Floating and Floating to Floating are mainly used in context with Swaps",
+							Toast.LENGTH_LONG).show();
+					a4.setChecked(false);
+					q2();
+					break;
+				
+				}
+			}
+		});
+	}
+
+}
